@@ -1,13 +1,11 @@
 package net.masterthought.core;
 
-import net.masterthought.Result;
 import net.masterthought.data.Any;
 import net.masterthought.data.AnyPair;
 import net.masterthought.data.Memory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import static net.masterthought.Utils.requires;
 
@@ -17,9 +15,10 @@ public class Agent {
 
     private List<Any> skills = new ArrayList<Any>();
 
-    public Agent() {}
+    public Agent() {
+    }
 
-    public <TOOL> Agent(TOOL... tools){
+    public <TOOL> Agent(TOOL... tools) {
         obtain(tools);
     }
 
@@ -30,7 +29,7 @@ public class Agent {
 
     public <TOOL> void obtain(TOOL... tools) {
         requires(tools);
-        for(TOOL tool : tools){
+        for (TOOL tool : tools) {
             this.skills.add(new Any(tool));
         }
     }
@@ -57,7 +56,7 @@ public class Agent {
         return memory.recall(category, key, clazz);
     }
 
-    public <CATEGORY> List<AnyPair> recallAllForCategory(CATEGORY category){
+    public <CATEGORY> List<AnyPair> recallAllForCategory(CATEGORY category) {
         requires(category);
         return memory.getAllForCategory(category);
     }
@@ -82,10 +81,6 @@ public class Agent {
         for (Objective objective : objectives) {
             objective.completeAndConfirm(this);
         }
-    }
-
-    public Map<Objective, Result> report() {
-        return null;
     }
 
 }
