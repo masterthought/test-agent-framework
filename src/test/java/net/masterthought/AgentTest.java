@@ -14,23 +14,11 @@ import static org.junit.Assert.assertThat;
 public class AgentTest {
 
     private class AnotherDummy {
-
-        public String getTest() {
-            return test;
-        }
-
+        public String getTest() { return test; }
         private String test;
-
-        public AnotherDummy() {
-        }
-
-        private AnotherDummy(String test) {
-            this.test = test;
-        }
-
-
+        public AnotherDummy() {}
+        private AnotherDummy(String test) {  this.test = test;  }
     }
-
 
     @Test
     public void heShouldBeAbleToRememberAndRecallStringFromTheSameCategoryWithDifferentKeys() throws Exception {
