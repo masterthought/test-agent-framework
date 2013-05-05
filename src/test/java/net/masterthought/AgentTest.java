@@ -23,10 +23,10 @@ public class AgentTest {
     @Test
     public void heShouldBeAbleToRememberAndRecallStringFromTheSameCategoryWithDifferentKeys() throws Exception {
         Agent agent = new Agent();
-        agent.bearInMind("test", "test", new AnotherDummy());
-        agent.bearInMind("test", "test1", new AnotherDummy("testValue"));
-        AnotherDummy anotherDummy = agent.recallFromMemory("test", "test", AnotherDummy.class);
-        AnotherDummy anotherDummy2 = agent.recallFromMemory("test", "test1", AnotherDummy.class);
+        agent.bearInMind("my_category", "my_first_key", new AnotherDummy());
+        agent.bearInMind("my_category", "my_second_key", new AnotherDummy("testValue"));
+        AnotherDummy anotherDummy = agent.recallFromMemory("my_category", "my_first_key", AnotherDummy.class);
+        AnotherDummy anotherDummy2 = agent.recallFromMemory("my_category", "my_second_key", AnotherDummy.class);
         assertThat(anotherDummy, notNullValue());
         assertThat(anotherDummy.getTest(), nullValue());
         assertThat(anotherDummy2, notNullValue());
