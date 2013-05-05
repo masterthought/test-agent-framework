@@ -11,5 +11,5 @@ The concepts namely:
    <li>Memory</li>
 </ul>
 
-are described at (this blog)[http://www.masterthought.net/section/blog_article/article/automation-strategy-vs-tactical-inception-of-features]
+are described at [this blog](http://www.masterthought.net/section/blog_article/article/automation-strategy-vs-tactical-inception-of-features)
 
