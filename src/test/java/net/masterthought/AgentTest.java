@@ -54,16 +54,16 @@ public class AgentTest {
     @Test
     public void heShouldBeAbleToRememberAndRecallFromTheSameObjectCategoryWithDifferentKeys() throws Exception {
         Agent agent = new Agent();
-        AnotherDummy common = new AnotherDummy();
-        AnotherDummy common2 = new AnotherDummy("secondOne");
-        agent.bearInMind(common, KEYS.KEY1, new AnotherDummy());
-        agent.bearInMind(common, KEYS.KEY2, new AnotherDummy("testValue"));
-        agent.bearInMind(common2, KEYS.KEY1, new AnotherDummy());
-        agent.bearInMind(common2, KEYS.KEY2, new AnotherDummy("testValue2"));
-        AnotherDummy anotherDummy = agent.recallFromMemory(common, KEYS.KEY1, AnotherDummy.class);
-        AnotherDummy anotherDummy2 = agent.recallFromMemory(common, KEYS.KEY2, AnotherDummy.class);
-        AnotherDummy anotherDummy3 = agent.recallFromMemory(common2, KEYS.KEY1, AnotherDummy.class);
-        AnotherDummy anotherDummy4 = agent.recallFromMemory(common2, KEYS.KEY2, AnotherDummy.class);
+        AnotherDummy common_object_category = new AnotherDummy();
+        AnotherDummy another_common_object_category = new AnotherDummy("secondOne");
+        agent.bearInMind(common_object_category, KEYS.KEY1, new AnotherDummy());
+        agent.bearInMind(common_object_category, KEYS.KEY2, new AnotherDummy("testValue"));
+        agent.bearInMind(another_common_object_category, KEYS.KEY1, new AnotherDummy());
+        agent.bearInMind(another_common_object_category, KEYS.KEY2, new AnotherDummy("testValue2"));
+        AnotherDummy anotherDummy = agent.recallFromMemory(common_object_category, KEYS.KEY1, AnotherDummy.class);
+        AnotherDummy anotherDummy2 = agent.recallFromMemory(common_object_category, KEYS.KEY2, AnotherDummy.class);
+        AnotherDummy anotherDummy3 = agent.recallFromMemory(another_common_object_category, KEYS.KEY1, AnotherDummy.class);
+        AnotherDummy anotherDummy4 = agent.recallFromMemory(another_common_object_category, KEYS.KEY2, AnotherDummy.class);
         assertThat(anotherDummy, notNullValue());
         assertThat(anotherDummy.getTest(), nullValue());
         assertThat(anotherDummy2, notNullValue());
