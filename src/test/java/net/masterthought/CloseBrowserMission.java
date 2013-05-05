@@ -15,9 +15,6 @@ public class CloseBrowserMission implements Mission{
     @Override
     public void accomplish(Agent agent) {
         agent.doThe(
-                waitFor(4000l),
-                waitFor(ExpectedConditions.alertIsPresent()),
-                clickOn(By.id("test")),
                 closeBrowser()
         );
     }
