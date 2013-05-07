@@ -28,6 +28,10 @@
             <id>repo.bodar.com</id>
             <url>http://repo.bodar.com</url>
         </repository>
+        <repository>
+            <id>jboss</id>
+            <url>http://repository.jboss.org/maven2/</url>
+        </repository>
     </repositories>
 
     <scm>
@@ -51,6 +55,7 @@
         </license>
     </licenses>
 
+
     <developers>
         <developer>
             <name>Kostas</name>
@@ -69,6 +74,16 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>2.31.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.gpars</groupId>
+            <artifactId>gpars</artifactId>
+            <version>0.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>1.8.6</version>
         </dependency>
     </dependencies>
 </project>
