@@ -28,16 +28,6 @@ public class ConcurrentAgent extends Agent {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-        final ConcurrentAgent concurrentAgent = new ConcurrentAgent();
-        concurrentAgent.doThe(new Mission() {
-            @Override
-            public void accomplish(Agent agent) {
-                System.out.println("I did it!");
-            }
-        });
-    }
-
     private class AgentActor extends DynamicDispatchActor {
 
         final Agent agent;

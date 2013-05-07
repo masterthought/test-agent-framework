@@ -6,11 +6,16 @@ import net.masterthought.data.Memory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import static net.masterthought.Utils.requires;
 
-public class Agent {
+public class Agent implements Comparable<Agent>{
+
+    public long getUniqueId() {
+        return uniqueId;
+    }
+
+    private long uniqueId = 0L;
 
     public Memory getMemory() {
         return memory;
@@ -33,6 +38,7 @@ public class Agent {
     private List<Any> skills = new ArrayList<Any>();
 
     public Agent() {
+        uniqueId = System.currentTimeMillis();
     }
 
     public <TOOL> Agent(TOOL... tools) {
@@ -100,4 +106,12 @@ public class Agent {
         }
     }
 
+    @Override
+    public int compareTo(Agent o) {
+
+        if(o.getUniqueId() > uniqueId){
+            return 1;
+        }
+        return -1;
+    }
 }
