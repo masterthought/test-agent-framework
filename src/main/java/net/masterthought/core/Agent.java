@@ -12,6 +12,22 @@ import static net.masterthought.Utils.requires;
 
 public class Agent {
 
+    public Memory getMemory() {
+        return memory;
+    }
+
+    public List<Any> getSkills() {
+        return skills;
+    }
+
+    public void setMemory(Memory memory) {
+        this.memory = memory;
+    }
+
+    public void setSkills(List<Any> skills) {
+        this.skills = skills;
+    }
+
     private Memory memory = new Memory();
 
     private List<Any> skills = new ArrayList<Any>();

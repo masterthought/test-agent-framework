@@ -8,9 +8,13 @@ import static net.masterthought.Utils.requires;
 
 public class ConcurrentAgent extends Agent {
 
-    final AgentActor agentActor = new AgentActor();
+    final AgentActor agentActor;
 
     public ConcurrentAgent() {
+        Agent agent = new Agent();
+        agent.setMemory(this.getMemory());
+        agent.setSkills(this.getSkills());
+        agentActor = new AgentActor(agent);
         agentActor.start();
     }
 
@@ -36,10 +40,15 @@ public class ConcurrentAgent extends Agent {
 
     private class AgentActor extends DynamicDispatchActor {
 
+        final Agent agent;
+
+        public AgentActor(Agent agent){
+            this.agent = agent;
+        }
 
         public void onMessage(final Object msg) {
             if (msg instanceof Mission[]) {
-                new Agent().doThe((Mission[]) msg);
+                agent.doThe((Mission[]) msg);
                 System.out.println("I did the missions");
             }
             replyIfExists("Received set of Missions.");
