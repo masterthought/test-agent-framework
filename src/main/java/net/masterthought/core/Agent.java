@@ -6,6 +6,7 @@ import net.masterthought.data.Memory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static net.masterthought.Utils.requires;
 
