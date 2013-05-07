@@ -21,7 +21,7 @@ public class ConcurrentAgentTest {
 
     @Test
     public void heShouldBeAbleToRememberAndRecallStringFromTheSameCategoryWithDifferentKeys() throws Exception {
-        Agent agent = new ConcurrentAgent();
+        ConcurrentAgent agent = new ConcurrentAgent();
         agent.bearInMind("my_category", "my_first_key", new AnotherDummy());
         agent.bearInMind("my_category", "my_second_key", new AnotherDummy("testValue"));
         AnotherDummy anotherDummy = agent.recallFromMemory("my_category", "my_first_key", AnotherDummy.class);
@@ -39,7 +39,7 @@ public class ConcurrentAgentTest {
     @Test
     public void heShouldBeAbleToRememberAndRecallEnumFromTheSameCategoryWithDifferentKeys() throws Exception {
 
-        Agent agent = new ConcurrentAgent();
+        ConcurrentAgent agent = new ConcurrentAgent();
         agent.bearInMind(CATEGORIES.CATEGORY1, KEYS.KEY1, new AnotherDummy());
         agent.bearInMind(CATEGORIES.CATEGORY1, KEYS.KEY2, new AnotherDummy("testValue"));
         AnotherDummy anotherDummy = agent.recallFromMemory(CATEGORIES.CATEGORY1, KEYS.KEY1, AnotherDummy.class);
@@ -52,7 +52,7 @@ public class ConcurrentAgentTest {
 
     @Test
     public void heShouldBeAbleToRememberAndRecallFromTheSameObjectCategoryWithDifferentKeys() throws Exception {
-        Agent agent = new ConcurrentAgent();
+        ConcurrentAgent agent = new ConcurrentAgent();
         AnotherDummy common_object_category = new AnotherDummy();
         AnotherDummy another_common_object_category = new AnotherDummy("secondOne");
         agent.bearInMind(common_object_category, KEYS.KEY1, new AnotherDummy());
@@ -102,7 +102,7 @@ public class ConcurrentAgentTest {
 
     @Test
     public void heShouldBeAbleToUseSkill() throws Exception {
-        Agent agent = new ConcurrentAgent();
+        ConcurrentAgent agent = new ConcurrentAgent();
         agent.obtain(new FirefoxDriver());
         agent.doThe(new SecretMission());
     }

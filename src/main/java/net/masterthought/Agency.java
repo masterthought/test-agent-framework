@@ -23,8 +23,7 @@ public class Agency {
         Collections.sort(l);
         for (Agent agent : l) {
              VALUE fromMemory = agent.recallFromMemory(category, key, clazz);
-             if(fromMemory != null)
-            return fromMemory;
+             if(fromMemory != null) return fromMemory;
         }
         return null;
     }
