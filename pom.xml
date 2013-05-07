@@ -4,7 +4,7 @@
 
     <groupId>net.masterthought</groupId>
     <artifactId>tester-fw</artifactId>
-    <version>0.1.a</version>
+    <version>0.1-SNAPSHOT</version>
     <modules>
         <module>examples</module>
     </modules>

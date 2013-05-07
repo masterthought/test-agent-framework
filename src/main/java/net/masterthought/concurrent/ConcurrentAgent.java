@@ -1,6 +1,7 @@
 package net.masterthought.concurrent;
 
 import groovyx.gpars.actor.DynamicDispatchActor;
+import net.masterthought.Agency;
 import net.masterthought.core.Agent;
 import net.masterthought.core.Mission;
 
@@ -11,10 +12,7 @@ public class ConcurrentAgent extends Agent {
     final AgentActor agentActor;
 
     public ConcurrentAgent() {
-        Agent agent = new Agent();
-        agent.setMemory(this.getMemory());
-        agent.setSkills(this.getSkills());
-        agentActor = new AgentActor(agent);
+        agentActor = new AgentActor(Agency.clone(this));
         agentActor.start();
     }
 
