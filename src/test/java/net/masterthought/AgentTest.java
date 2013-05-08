@@ -14,10 +14,18 @@ import static org.junit.Assert.assertThat;
 public class AgentTest {
 
     private class AnotherDummy {
-        public String getTest() { return test; }
+        public String getTest() {
+            return test;
+        }
+
         private String test;
-        public AnotherDummy() {}
-        private AnotherDummy(String test) {  this.test = test;  }
+
+        public AnotherDummy() {
+        }
+
+        private AnotherDummy(String test) {
+            this.test = test;
+        }
     }
 
     @Test
@@ -39,7 +47,6 @@ public class AgentTest {
 
     @Test
     public void heShouldBeAbleToRememberAndRecallEnumFromTheSameCategoryWithDifferentKeys() throws Exception {
-
         Agent agent = new Agent();
         agent.bearInMind(CATEGORIES.CATEGORY1, KEYS.KEY1, new AnotherDummy());
         agent.bearInMind(CATEGORIES.CATEGORY1, KEYS.KEY2, new AnotherDummy("testValue"));
